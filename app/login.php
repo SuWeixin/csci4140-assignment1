@@ -13,8 +13,8 @@ $pdo = new PDO("pgsql:" . sprintf(
 $name = $_POST['username'];
 $password = $_POST['password'];
 
-$sql = "SELECT * FROM MyUser where name = " + $name + " and passwords = " + $password + ";";
-echo "SELECT * FROM MyUser where name = " + $name + " and passwords = " + $password + ";";
+$sql = 'SELECT * FROM MyUser where name = ' + $name + ' and passwords = ' + $password + ';';
+echo 'SELECT * FROM MyUser where name = ' + $name + ' and passwords = ' + $password + ';';
 
 if($stmt = $pdo->query($sql)) {
     if($stmt->fetchColumn() > 0){
