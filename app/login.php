@@ -13,9 +13,9 @@ $pdo = new PDO("pgsql:" . sprintf(
 $name = $_POST['username'];
 $password = $_POST['password'];
 
-// $sql = "SELECT * FROM MyUser where name = '{$name}' and passwords = '{$password}';"
+$sql = "SELECT * FROM MyUser where name = '{$name}' and passwords = '{$password}';"
 
-// $stmt = $pdo->query($sql);
+$stmt = $pdo->query($sql);
 
 // $flag = false;
 // if ($_POST['username'] == 'admin' && $_POST['password'] == 'minda123') {
