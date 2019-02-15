@@ -4,6 +4,6 @@
 
 if(isset($_POST['button'])){
     setcookie('username',$_POST['username'], time()+36000);
-    header('location:index.php');
+    header('location:homepage.php');
 }
 ?>

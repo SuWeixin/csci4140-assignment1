@@ -2,5 +2,5 @@
     if(isset($_COOKIE['username'])) {
         setcookie('username','',time()-3600);
     }
-    header('location: index.html');
+    header('location: index.php');
 ?>
