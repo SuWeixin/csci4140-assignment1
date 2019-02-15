@@ -1,14 +1,14 @@
 <?php
-$db = parse_url(getenv("DATABASE_URL"));
+// $db = parse_url(getenv("DATABASE_URL"));
 
-$pdo = new PDO("pgsql:" . sprintf(
-    "host=%s;port=%s;password=%s;dbname=%s",
-    $db["host"],
-    $db["port"],
-    $db["user"],
-    $db["pass"],
-    ltrim($db["path"], "/")
-));
+// $pdo = new PDO("pgsql:" . sprintf(
+//     "host=%s;port=%s;password=%s;dbname=%s",
+//     $db["host"],
+//     $db["port"],
+//     $db["user"],
+//     $db["pass"],
+//     ltrim($db["path"], "/")
+// ));
 
 // $name = $_POST['username'];
 // $pass = $_POST['password'];
