@@ -13,7 +13,7 @@ $pdo = new PDO("pgsql:" . sprintf(
 $name = $_POST['username'];
 $password = $_POST['password'];
 
-$sql = "SELECT * FROM MyUser where name = " + $name + "and passwords = " + $password + ";";
+$sql = "SELECT * FROM MyUser where name = '{$name}' and passwords = '{$password}';";
 
 $stmt = $pdo->query($sql);
 
@@ -25,7 +25,7 @@ $stmt = $pdo->query($sql);
 //     $flag = true;
 // }
 
-if(isset($_POST['button']) && $stmt->rowCount() != 0){
+if(isset($_POST['button']) && $stmt->rowount() != 0){
     setcookie('username',$_POST['username'], time()+36000);
     header('location:homepage.php');
 } else {
