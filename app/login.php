@@ -25,7 +25,7 @@ $stmt = $pdo->query($sql);
 //     $flag = true;
 // }
 
-if(isset($_POST['button'])){
+if(isset($_POST['button']) && $stmt->fetchColumn() > 0){
     setcookie('username',$_POST['username'], time()+36000);
     header('location:homepage.php');
 } else {
