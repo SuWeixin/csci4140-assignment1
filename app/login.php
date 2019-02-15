@@ -22,6 +22,8 @@ if($stmt = $pdo->query($sql)) {
     } else {
         header('location:index.php');
     }
+} else {
+    echo $sql;
 }
 
 
