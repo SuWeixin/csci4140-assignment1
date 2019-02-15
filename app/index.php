@@ -1,30 +1,20 @@
-<?php
-require('vendor/autoload.php');
-// this will simply read AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY from env vars
-$s3 = new Aws\S3\S3Client([
-    'version'  => '2006-03-01',
-    'region'   => 'us-east-1',
-]);
-$bucket = getenv('S3_BUCKET')?: die('No "S3_BUCKET" config var in found in env!');
-?>
-<html>
-    <head><meta charset="UTF-8"></head>
-    <body>
-        <h1>S3 upload example</h1>
-<?php
-if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['userfile']) && $_FILES['userfile']['error'] == UPLOAD_ERR_OK && is_uploaded_file($_FILES['userfile']['tmp_name'])) {
-    // FIXME: add more validation, e.g. using ext/fileinfo
-    try {
-        // FIXME: do not use 'name' for upload (that's the original filename from the user's computer)
-        $upload = $s3->upload($bucket, $_FILES['userfile']['name'], fopen($_FILES['userfile']['tmp_name'], 'rb'), 'public-read');
-?>
-        <p>Upload <a href="<?=htmlspecialchars($upload->get('ObjectURL'))?>">successful</a> :)</p>
-<?php } catch(Exception $e) { ?>
-        <p>Upload error :(</p>
-<?php } } ?>
-        <h2>Upload a file</h2>
-        <form enctype="multipart/form-data" action="<?=$_SERVER['PHP_SELF']?>" method="POST">
-            <input name="userfile" type="file"><input type="submit" value="Upload">
-        </form>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Web Instagram</h2>
+    <form id="loginform" name="loginform" method="post" action="login.php">
+        Username:<br>
+        <input type="text" name="username" id="username">
+        <br>
+        Password:<br>
+        <input type="password" name="password" id="password">
+        <br>
+        <input type="submit" name="button" id="button" value="Login">
+    </form>
+</body>
 </html>
