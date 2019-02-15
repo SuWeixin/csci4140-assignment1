@@ -6,5 +6,11 @@
         echo '<a href="logout.php"> Log Out </a>';
     }
 ?>
+
+<p>
+    Picture Upload
+    
+</p>
+
 </body>
 </html>
