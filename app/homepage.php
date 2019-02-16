@@ -9,7 +9,6 @@
 
 <h3>User Image</h3>
 <?php
-    echo "Display";
     $db = parse_url(getenv("DATABASE_URL"));
 
     $pdo = new PDO("pgsql:" . sprintf(
@@ -26,7 +25,7 @@
     $sql = "SELECT * from USERIMAGES WHERE username = '{$username}' ORDER BY ts DESC;";
 
     foreach ($pdo->query($sql) as $row) {
-        echo $row['username'];
+        header( "Content-type: $row['type']", true);
         echo $row['image'];
     }
 ?>
