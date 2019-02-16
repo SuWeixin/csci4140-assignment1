@@ -30,8 +30,10 @@ if (isset($_POST['submit'])) {
             $image_id = 0;
             if ($stmt1->fetchColumn() != 0) {
                 $id_bucket = $stmt1->fetchAll();
-                $image_id = $id_bucket[1]['id'] + 1;
+                $image_id = $id_bucket[0]['id'] + 1;
             }
+            echo $id_bucket[0]['id'];
+            echo $id_bucket[0]['id'];
             
             $data = addslashes(fread(fopen($image_data, "r"), filesize($image_data_size)));
             $sql2 = "INSERT INTO USERIMAGES (id, username, type, image, ts, private) VALUES 
