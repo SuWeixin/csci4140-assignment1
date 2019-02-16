@@ -25,15 +25,13 @@ if (isset($_POST['submit'])) {
             ltrim($db["path"], "/")
         ));
 
-        $sql1 = "SELECT * FROM USERIMAGES ORDER BY id DESC;";
+        $sql1 = "SELECT id FROM USERIMAGES ORDER BY id DESC;";
         if ($stmt1 = $pdo->query($sql1)) {
             $image_id = 0;
             if ($stmt1->fetchColumn() != 0) {
-                $id_bucket = $stmt1->fetchAll();
-                $image_id = $id_bucket[0]['id'] + 1;
+                // $id_bucket = $stmt1->fetchAll();
+                $image_id = $stmt + 1;
             }
-            echo $id_bucket[0]['id'];
-            echo $id_bucket[0]['id'];
             
             $data = addslashes(fread(fopen($image_data, "r"), filesize($image_data_size)));
             $sql2 = "INSERT INTO USERIMAGES (id, username, type, image, ts, private) VALUES 
