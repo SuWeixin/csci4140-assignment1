@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
         $sql1 = "SELECT id FROM USERIMAGES ORDER BY id DESC;";
         if ($stmt1 = $pdo->query($sql1)) {
             $image_id = 0;
-            if ($stmt1->fetchColumn != 0) {
+            if ($stmt1->fetchColumn() != 0) {
                 $id_bucket = $stmt1->fetchAll();
                 $image_id = $id_bucket[0]['id'] + 1;
             }
