@@ -12,7 +12,8 @@ if (isset($_POST['submit'])) {
     }
 
     if ($image_data_type != 'image/jpeg' && $image_data_type != 'image/gif' && $image_data_type != 'image/png') {
-        header('location:homepage.php');
+        // header('location:homepage.php');
+        echo $image_data_type;
     } else {
         $db = parse_url(getenv("DATABASE_URL"));
 
@@ -27,7 +28,7 @@ if (isset($_POST['submit'])) {
 
         $sql1 = "SELECT * FROM USERIMAGES;";
         if ($stmt1 = $pdo->query($sql1)) {
-            $image_id = $stmt1->fetchColumn() + 0;
+            $image_id = $stmt1->fetchColumn();
 
             $data = addslashes(fread(fopen($image_data, "r"), filesize($image_data_size)));
             $sql2 = "INSERT INTO USERIMAGES (id, username, type, image, ts, private) VALUES 
