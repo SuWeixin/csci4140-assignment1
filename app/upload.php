@@ -25,10 +25,14 @@ if (isset($_POST['submit'])) {
             ltrim($db["path"], "/")
         ));
 
-        $sql1 = "SELECT id FROM USERIMAGES ORDER BY id DESC;";
+        $sql1 = "SELECT * FROM USERIMAGES ORDER BY id DESC;";
         if ($stmt1 = $pdo->query($sql1)) {
             $image_id = 0;
             if ($stmt1->fetchColumn() != 0) {
+                foreach ($pdo->query($sql1) as $row) {
+                    echo $row['username'];
+                    echo $row['id'];
+                }
                 // $id_bucket = $stmt1->fetchAll(1);
                 $image_id = $stmt1->fetchColumn(0) + 1;
             }
