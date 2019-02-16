@@ -25,7 +25,8 @@
     $sql = "SELECT * from USERIMAGES WHERE username = '{$username}' ORDER BY ts DESC;";
 
     foreach ($pdo->query($sql) as $row) {
-        header( "Content-type: $row['type']", true);
+        $type = $row['type'];
+        header( "Content-type: $row", true);
         echo $row['image'];
     }
 ?>
