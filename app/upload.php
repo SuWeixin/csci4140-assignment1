@@ -30,6 +30,7 @@ if (isset($_POST['submit'])) {
             $image_id = 0;
             if ($stmt1->fetchColumn() != 0) {
                 // $id_bucket = $stmt1->fetchAll();
+                echo $stmt1;
                 $image_id = $stmt + 1;
             }
             
