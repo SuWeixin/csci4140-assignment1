@@ -32,6 +32,8 @@ if (isset($_POST['submit'])) {
         $data = addslashes(fread(fopen($image_data, "r"), filesize($image_data_size)));
         $sql2 = "INSERT INTO UMERIMAGES (id, username, type, image, ts, private) VALUES 
                 ({$image_id}, '{$image_username}', '{$image_data_type}', '{$data}', NOW(), '{$image_upload_mode}');";
+        echo $sql1;
+        echo $sql2;
         if ($pdo->query($sql2)) {
             header('location:homepage.php');
         }     
