@@ -33,7 +33,7 @@
 <form action="upload.php" method="post" enctype="multipart/form-data">
     Select image to upload:
     <input type="file" name="fileToUpload" id="fileToUpload">
-    <select name="private">
+    <select name="mode">
         <option value="private">Private</option>
         <option value="public">Public</option>
     </select>
