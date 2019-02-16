@@ -23,9 +23,10 @@
 
     $username = $_COOKIE['username'];
 
-    $sql = "SELECT image from USERIMAGES WHERE name = '{$username}' ORDER BY ts DESC;";
+    $sql = "SELECT * from USERIMAGES WHERE name = '{$username}' ORDER BY ts DESC;";
 
     foreach ($pdo->query($sql) as $row) {
+        echo $row['username'];
         echo $row['image'];
     }
 ?>
