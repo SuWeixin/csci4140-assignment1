@@ -11,9 +11,8 @@ if (isset($_POST['submit'])) {
         $image_upload_mode = false;
     }
 
-    echo $image_data_type;
     if ($image_data_type != 'image/jpeg' && $image_data_type != 'image/gif' && $image_data_type != 'image/png') {
-        // header('location:homepage.php');
+        header('location:homepage.php');
     } else {
         $db = parse_url(getenv("DATABASE_URL"));
 

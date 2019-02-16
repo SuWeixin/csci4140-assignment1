@@ -9,6 +9,7 @@
 
 <h3>User Image</h3>
 <?php
+    echo "Display";
     $db = parse_url(getenv("DATABASE_URL"));
 
     $pdo = new PDO("pgsql:" . sprintf(
