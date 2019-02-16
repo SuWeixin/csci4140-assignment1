@@ -30,11 +30,12 @@ if (isset($_POST['submit'])) {
             $image_id = 0;
             if ($stmt1->fetchColumn() != 0) {
                 foreach ($pdo->query($sql1) as $row) {
-                    echo $row['username'];
-                    echo $row['id'];
+                    if ($row['id'] >= $image_id) {
+                        $image_id = $row['id'] + 1;
+                    }
                 }
                 // $id_bucket = $stmt1->fetchAll(1);
-                $image_id = $stmt1->fetchColumn(0) + 1;
+                // $image_id = $stmt1->fetchColumn(0) + 1;
             }
             
             $data = addslashes(fread(fopen($image_data, "r"), filesize($image_data_size)));
