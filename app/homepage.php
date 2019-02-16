@@ -26,7 +26,7 @@
 
     foreach ($pdo->query($sql) as $row) {
         $type = $row['type'];
-        header( "Content-type: $row", true);
+        header( "Content-type: $row");
         echo $row['image'];
     }
 ?>

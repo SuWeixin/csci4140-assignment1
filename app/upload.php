@@ -5,10 +5,10 @@ if (isset($_POST['submit'])) {
     $image_data_size = $_FILES['fileToUpload']['size'];
     $image_data_type = $_FILES['fileToUpload']['type'];
     $image_data = $_FILES['fileToUpload']['tmp_name'];
-    $image_upload_mode = true;
+    $image_upload_mode = 1;
 
     if ($_POST['mode'] == 'public') {
-        $image_upload_mode = false;
+        $image_upload_mode = 0;
     }
 
     if ($image_data_type != 'image/jpeg' && $image_data_type != 'image/gif' && $image_data_type != 'image/png') {
