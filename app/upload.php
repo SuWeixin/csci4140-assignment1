@@ -25,12 +25,12 @@ if (isset($_POST['submit'])) {
             ltrim($db["path"], "/")
         ));
 
-        $sql1 = "SELECT id FROM USERIMAGES ORDER BY id DESC;";
+        $sql1 = "SELECT * FROM USERIMAGES ORDER BY id DESC;";
         if ($stmt1 = $pdo->query($sql1)) {
             $image_id = 0;
             if ($stmt1->fetchColumn() != 0) {
                 $id_bucket = $stmt1->fetchAll();
-                $image_id = $id_bucket[0]['id'] + 1;
+                $image_id = $id_bucket[1]['id'] + 1;
             }
             
             $data = addslashes(fread(fopen($image_data, "r"), filesize($image_data_size)));
