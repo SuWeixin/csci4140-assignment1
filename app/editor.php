@@ -15,7 +15,7 @@
         $type = 'image/png';
     }
     require('../vendor/autoload.php');
-    header("Content-type: {$type}");
+    // header("Content-type: {$type}");
 
     $path = 'image/'.$_COOKIE['imagepath'];
 
