@@ -29,7 +29,7 @@
     $path = 'image/'.$_COOKIE['imagepath'];
 
     $image_file = fopen($path, 'r');
-    $data = fread($image_file, filesize($path));
+    $data = addslashes(fread($image_file, filesize($path)));
     $sql = "INSERT INTO USERIMAGES (id, username, type, image, ts, private) VALUES 
     ({$id}, '{$image_username}', '{$type}', '{$data}', NOW(), '{$image_upload_mode}');";
     echo $sql;
