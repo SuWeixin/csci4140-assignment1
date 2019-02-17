@@ -7,6 +7,12 @@
     }
 ?>
 
+<?php
+    if($_COOKIE['username'] == 'admin') {
+        echo '<a href="confirm.php"> Initialization </a>'
+    }
+?>
+
 <h3>User Image</h3>
 <?php
     $db = parse_url(getenv("DATABASE_URL"));

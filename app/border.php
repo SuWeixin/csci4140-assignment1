@@ -16,19 +16,22 @@
     }
     require('../vendor/autoload.php');
     // header("Content-type: {$type}");
-    $tmp_path = 'image/'.intval($id).'.'.$postfix;
-    if(file_exists($tmp_path)) {
-        unlink($tmp_path);
-    }
 
     $path = 'image/'.$_COOKIE['imagepath'];
 
-    // echo $path."<br>";
-    // echo $type."<br>";
-    // $image_in = new Imagick($path);
+    $pieces = explode(".", $_COOKIE['imagepath']);
+    $id = intval($pieces[0]);
+    $postfix = $pieces[1];
 
-    // echo $image_in;
-    echo "<a href='$path'> <img src=$path> </a>";
+    $new_id = $id + 1;
+    $new_image_name = 'image/'.$new_id.'.'.$postfix;
+
+    $image_in = new Imagick($path);
+
+    $image_in->borderImage('black', 100, 100);
+    $image_in->writeImage($new_image_name);
+
+    echo "<a href='$new_image_name'> <img src=$new_image_name> </a>";
 ?>
 <form id="borderform" name="borderform" method="post" action="border.php">
     <input type="submit" name="borderButton" value="Border" />
@@ -51,7 +54,7 @@
 <form id="deleteform" name="deleteform" method="post" action="delete.php">
     <input type="submit" name="deleteButton" value="Delete" />
 </form>
-<form id="finishform" name="finishform" method="post" action="finishUndo.php">
+<form id="finishform" name="finishform" method="post" action="finish.php">
     <input type="submit" name="finishButton" value="Finish" />
 </form>
 
