@@ -27,10 +27,9 @@ if (isset($_POST['submit'])) {
 
         $sql1 = "SELECT * FROM USERIMAGES ORDER BY id DESC;";
         if ($stmt1 = $pdo->query($sql1)) {
-            $image_id = 0;
+            $image_id = 1;
             if ($stmt1->fetchColumn() != 0) {
                 foreach ($pdo->query($sql1) as $row) {
-                    echo $row['id'];
                     if ($row['id'] >= $image_id) {
                         $image_id = $row['id'] + 1;
                     }
