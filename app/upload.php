@@ -42,8 +42,19 @@ if (isset($_POST['submit'])) {
             $sql2 = "INSERT INTO USERIMAGES (id, username, type, image, ts, private) VALUES 
                     ({$image_id}, '{$image_username}', '{$image_data_type}', '{$data}', NOW(), '{$image_upload_mode}');";
                     
-            echo $sql2;
+            // echo $sql2;
             if ($pdo->query($sql2)) {
+                $new_file_name = $image_id;
+                if ($image_data_type == 'image/jpeg') {
+                    $new_file_name .= 'jpg';
+                }
+                if ($image_data_type == 'image/gif') {
+                    $new_file_name .= 'gif';
+                }
+                if ($image_data_type == 'image/png') {
+                    $new_file_name .= 'png';
+                }
+                move_uploaded_file($image_data, './image/'.$new_file_name);
                 header('location:homepage.php');
             }
         }
