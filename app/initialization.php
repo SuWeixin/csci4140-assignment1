@@ -41,5 +41,5 @@
     $pdo->query($sql3);
 
     echo 'Initialization completed';
-    echo '<a href="done.php"> '
+    echo '<a href="homepage.php"> Go Back </a>';
 ?>
