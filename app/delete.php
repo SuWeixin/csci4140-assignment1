@@ -15,6 +15,10 @@
     $postfix = $pieces[1];
 
     $path = 'image/'.$_COOKIE['imagepath'];
+    $tmp_path = 'image/'.intval($id+1).'.'.$postfix;
+    if(file_exists($tmp_path)) {
+        unlink($tmp_path);
+    }
 
     $sql = "DELETE FROM USERIMAGES WHERE id = $id";
     if($stmt = $pdo->query($sql)) {

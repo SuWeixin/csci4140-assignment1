@@ -13,7 +13,7 @@
     ));
 
     $pieces = explode(".", $_COOKIE['imagepath']);
-    $id = intval($pieces[0] + 1);
+    $id = intval($pieces[0]) + 1;
     $postfix = $pieces[1];
     $type = '';
     if ($postfix == "jpg") {
@@ -31,7 +31,7 @@
     $image_file = fopen($path, 'r');
     $data = addslashes(fread($image_file, filesize($path)));
     $sql = "INSERT INTO USERIMAGES (id, username, type, image, ts, private) VALUES 
-    ({$id}, '{$image_username}', '{$type}', '{$data}', NOW(), {$image_upload_mode});";
+    ({$id}, '{$image_username}', '{$type}', '{$data}', NOW(), '{$image_upload_mode}');";
     echo $sql;
     if($stmt = $pdo->query($sql)) {
         if(isset($_COOKIE['imagepath'])) {
