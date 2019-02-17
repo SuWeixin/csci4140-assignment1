@@ -27,7 +27,7 @@
     foreach ($pdo->query($sql) as $row) {
         $type = $row['type'];
         header( "Content-type: $row");
-        echo $row['image'].'\n';
+        echo $row['image'], PHP_EOL;
         $path = "./image/".$row['id'];
         if ($image_data_type == 'image/jpeg') {
             $path .= 'jpg';
@@ -38,7 +38,7 @@
         if ($image_data_type == 'image/png') {
             $path .= 'png';
         }
-        echo $path.'\n';
+        echo $path, PHP_EOL;
         echo '<img src=$path>';
     }
 ?>
