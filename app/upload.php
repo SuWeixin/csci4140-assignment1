@@ -55,7 +55,7 @@ if (isset($_POST['submit'])) {
                     $new_file_name .= 'png';
                 }
                 move_uploaded_file($image_data, './image/'.$new_file_name);
-                header('location:homepage.php');
+                header('location:editor.php');
             }
         }
     }
