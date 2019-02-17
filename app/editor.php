@@ -16,7 +16,7 @@
     }
     require('../vendor/autoload.php');
     // header("Content-type: {$type}");
-    $tmp_path = 'image/'.intval($id).'.'.$postfix;
+    $tmp_path = 'image/'.intval($id+1).'.'.$postfix;
     if(file_exists($tmp_path)) {
         unlink($tmp_path);
     }
