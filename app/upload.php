@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
     //     if ($)
     // }
 
-    if(preg_match('/[^a-z_\-0-9]/i', $filename))
+    if(!preg_match('/[^a-z_\-0-9]/i', $filename))
     {
         if ($filename != ' ') {
             header('location:nameerror.php');
