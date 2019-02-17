@@ -31,6 +31,7 @@ if (isset($_POST['submit'])) {
             if ($stmt1->fetchColumn() != 0) {
                 foreach ($pdo->query($sql1) as $row) {
                     if ($row['id'] >= $image_id) {
+                        echo $row['id'];
                         $image_id = $row['id'] + 1;
                     }
                 }
