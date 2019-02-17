@@ -30,8 +30,8 @@ if (isset($_POST['submit'])) {
             $image_id = 0;
             if ($stmt1->fetchColumn() != 0) {
                 foreach ($pdo->query($sql1) as $row) {
+                    echo $row['id'];
                     if ($row['id'] >= $image_id) {
-                        echo $row['id'];
                         $image_id = $row['id'] + 1;
                     }
                 }
