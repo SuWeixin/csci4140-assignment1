@@ -19,10 +19,11 @@
 
     $path = 'image/'.$_COOKIE['imagepath'];
 
-    echo $path;
+    echo $path."<br>";
+    echo $type."<br>";
     $image_in = new Imagick($path);
 
-    // echo $image_in;
+    echo $image_in;
 ?>
 <form id="borderform" name="borderform" method="post" action="border.php">
     <input type="submit" name="borderButton" value="Border" />
