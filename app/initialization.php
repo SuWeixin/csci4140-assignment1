@@ -40,6 +40,6 @@
 
     $pdo->query($sql3);
 
-    echo 'Initialization completed'.'</br>'>;
+    echo 'Initialization completed'.'</br>';
     echo '<a href="homepage.php"> Go Back </a>';
 ?>
