@@ -28,7 +28,7 @@
         $type = $row['type'];
         header( "Content-type: $row");
         echo $row['image']."<br>";
-        $path = "./image/".$row['id'];
+        $path = "image/".$row['id'];
         if ($row['type'] == 'image/jpeg') {
             $path .= '.jpg';
         }
@@ -39,7 +39,7 @@
             $path .= '.png';
         }
         echo $path."<br>";
-        echo '<img src=$path>';
+        echo "<img src=$path>";
     }
 ?>
 
