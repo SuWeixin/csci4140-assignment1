@@ -11,14 +11,14 @@
     ));
 
     $pieces = explode(".", $_COOKIE['imagepath']);
-    $id = int($pieces[0]);
+    $id = 1;
     $postfix = $pieces[1];
 
     $path = 'image/'.$_COOKIE['imagepath'];
 
     $sql = "DELETE FROM USERIMAGES WHERE id = $id";
     if($stmt = $pdo->query($sql)) {
-        // unlink($path);
+        unlink($path);
         if(isset($_COOKIE['imagepath'])) {
             setcookie('imagepath','',time()-3600);
         }
