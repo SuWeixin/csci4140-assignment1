@@ -12,15 +12,12 @@ if (isset($_POST['submit'])) {
     }
 
     $filename = $_POST['imagename'];
-    // $array = str_split($filename);
-    // foreach ($array as $char) {
-    //     if ($)
-    // }
-
-    if(!preg_match('/[^a-z_\-0-9]/i', $filename))
-    {
-        if ($filename != ' ') {
-            header('location:nameerror.php');
+    if ($filename != ' ') {
+        $array = str_split($filename);
+        foreach ($array as $char) {
+            if (ctype_alnum($char) == false && $char != '-' && $char != '_') {
+                header('location:nameerror.php');
+            }
         }
     }
 
