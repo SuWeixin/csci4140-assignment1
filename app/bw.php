@@ -29,7 +29,7 @@
     $image_in = new Imagick($path);
     $filter = new Imagick('bwgrad.png');
 
-    $image_in->compositeImage($filter, Imagick::COMPOSITE_MATHEMATICS, 0, 0);
+    $image_in->modulateImage(100, 0, 100); 
     $image_in->writeImage($new_image_name);
 
     echo "<a href='$new_image_name'> <img src=$new_image_name> </a>";
