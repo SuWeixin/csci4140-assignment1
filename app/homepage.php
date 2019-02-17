@@ -39,7 +39,7 @@
             $path .= '.png';
         }
         echo $path."<br>";
-        echo "<a href='$path'> <img src=$path width="400" height="300"> </a>";
+        echo "<a href='$path'> <img src=$path width='400' height='300'> </a>";
     }
 ?>
 
