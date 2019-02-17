@@ -27,18 +27,18 @@
     foreach ($pdo->query($sql) as $row) {
         $type = $row['type'];
         header( "Content-type: $row");
-        echo $row['image'], PHP_EOL;
+        echo $row['image']."<br>";
         $path = "./image/".$row['id'];
-        if ($image_data_type == 'image/jpeg') {
+        if ($row['type'] == 'image/jpeg') {
             $path .= 'jpg';
         }
-        if ($image_data_type == 'image/gif') {
+        if ($row['type'] == 'image/gif') {
             $path .= 'gif';
         }
-        if ($image_data_type == 'image/png') {
+        if ($row['type'] == 'image/png') {
             $path .= 'png';
         }
-        echo $path, PHP_EOL;
+        echo $path."<br>";
         echo '<img src=$path>';
     }
 ?>
