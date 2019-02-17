@@ -11,6 +11,19 @@ if (isset($_POST['submit'])) {
         $image_upload_mode = 0;
     }
 
+    $filename = $_POST['imagename'];
+    // $array = str_split($filename);
+    // foreach ($array as $char) {
+    //     if ($)
+    // }
+
+    if(preg_match('/[^a-z_\-0-9]/i', $filename))
+    {
+        if ($filename != ' ') {
+            header('location:nameerror.php');
+        }
+    }
+
     if ($image_data_type != 'image/jpeg' && $image_data_type != 'image/gif' && $image_data_type != 'image/png') {
         header('location:typeerror.php');
     } else {
