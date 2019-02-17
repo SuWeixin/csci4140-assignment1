@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
             $sql2 = "INSERT INTO USERIMAGES (id, username, type, image, ts, private) VALUES 
                     ({$image_id}, '{$image_username}', '{$image_data_type}', '{$data}', NOW(), '{$image_upload_mode}');";
                     
-            // echo $sql2;
+            echo $sql2;
             if ($pdo->query($sql2)) {
                 $new_file_name = $image_id;
                 if ($image_data_type == 'image/jpeg') {
