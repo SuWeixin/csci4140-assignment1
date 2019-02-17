@@ -27,8 +27,9 @@
     $new_image_name = 'image/'.$new_id.'.'.$postfix;
 
     $image_in = new Imagick($path);
+    $filter = new Imagick('bwgrad.png');
 
-    $image_in->borderImage('black', 100, 100);
+    $image_in->compositeImage($filter, Imagick::COMPOSITE_MATHEMATICS, 0, 0);
     $image_in->writeImage($new_image_name);
 
     echo "<a href='$new_image_name'> <img src=$new_image_name> </a>";

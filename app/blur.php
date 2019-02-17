@@ -28,7 +28,7 @@
 
     $image_in = new Imagick($path);
 
-    $image_in->borderImage('black', 100, 100);
+    $image_in->blurImage(10, 10);
     $image_in->writeImage($new_image_name);
 
     echo "<a href='$new_image_name'> <img src=$new_image_name> </a>";
