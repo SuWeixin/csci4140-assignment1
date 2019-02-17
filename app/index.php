@@ -50,7 +50,7 @@
                 $path .= '.png';
             }
             echo $path."<br>";
-            echo "<img src=$path>";
+            echo "<img src=$path> width='400' height='300'";
         }
     ?>
 

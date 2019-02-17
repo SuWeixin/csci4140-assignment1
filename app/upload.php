@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
     }
 
     if ($image_data_type != 'image/jpeg' && $image_data_type != 'image/gif' && $image_data_type != 'image/png') {
-        header('location:homepage.php');
+        header('location:typeerror.php');
     } else {
         $db = parse_url(getenv("DATABASE_URL"));
 
@@ -55,7 +55,8 @@ if (isset($_POST['submit'])) {
                     $new_file_name = $new_file_name.'.png';
                 }
                 move_uploaded_file($image_data, './image/'.$new_file_name);
-                header('location:homepage.php');
+                setcookie("imagepath", $new_file_name);
+                header('location:editor.php');
             }
         }
     }
