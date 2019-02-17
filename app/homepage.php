@@ -9,7 +9,7 @@
 
 <?php
     if($_COOKIE['username'] == 'admin') {
-        echo '<a href="confirm.php"> Initialization </a>'
+        echo '<a href="confirm.php"> Initialization <a>';
     }
 ?>
 
