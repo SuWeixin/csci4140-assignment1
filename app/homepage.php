@@ -30,13 +30,13 @@
         echo $row['image']."<br>";
         $path = "./image/".$row['id'];
         if ($row['type'] == 'image/jpeg') {
-            $path .= 'jpg';
+            $path .= '.jpg';
         }
         if ($row['type'] == 'image/gif') {
-            $path .= 'gif';
+            $path .= '.gif';
         }
         if ($row['type'] == 'image/png') {
-            $path .= 'png';
+            $path .= '.png';
         }
         echo $path."<br>";
         echo '<img src=$path>';

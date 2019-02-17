@@ -46,13 +46,13 @@ if (isset($_POST['submit'])) {
             if ($pdo->query($sql2)) {
                 $new_file_name = $image_id;
                 if ($image_data_type == 'image/jpeg') {
-                    $new_file_name = $new_file_name.'jpg';
+                    $new_file_name = $new_file_name.'.jpg';
                 }
                 if ($image_data_type == 'image/gif') {
-                    $new_file_name = $new_file_name.'gif';
+                    $new_file_name = $new_file_name.'.gif';
                 }
                 if ($image_data_type == 'image/png') {
-                    $new_file_name = $new_file_name.'png';
+                    $new_file_name = $new_file_name.'.png';
                 }
                 move_uploaded_file($image_data, './image/'.$new_file_name);
                 header('location:homepage.php');
