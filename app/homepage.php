@@ -3,13 +3,13 @@
 <?php
     if(isset($_COOKIE['username'])) {
         echo 'You are logged as '.$_COOKIE['username'].'</br>';
-        echo '<a href="logout.php"> Log Out </a>';
+        echo '<a href="logout.php"> Log Out </a>'.'</br>';
     }
 ?>
 
 <?php
     if($_COOKIE['username'] == 'admin') {
-        echo '<a href="confirm.php"> Initialization <a>';
+        echo '<a href="confirm.php"> Initialization <a></br>';
     }
 ?>
 
