@@ -39,6 +39,7 @@
         <option value="private">Private</option>
         <option value="public">Public</option>
     </select>
+    <input type="text" name="imagename" id="imagename">
     <input type="submit" value="Upload Image" name="submit">
 </form>
 
