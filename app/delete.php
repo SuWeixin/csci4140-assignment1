@@ -18,7 +18,7 @@
 
     $sql = "DELETE FROM USERIMAGES WHERE id = $id";
     if($stmt = $pdo->query($sql)) {
-        unlink($path);
+        // unlink($path);
         if(isset($_COOKIE['imagepath'])) {
             setcookie('imagepath','',time()-3600);
         }
