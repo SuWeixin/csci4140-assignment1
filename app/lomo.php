@@ -29,7 +29,7 @@
     $image_in = new Imagick($path);
 
     $image_in->gammaImage(5, Imagick::CHANNEL_DEFAULT);
-    $image_in->modulateImage(30, 50, 100);
+    $image_in->modulateImage(70, 50, 100);
     $pixels = $image_in->getImageWidth() * $image_in->getImageHeight();
     $image_in->linearStretchImage(0.9 * $pixels, 0.1 * $pixels);
     $image_in->writeImage($new_image_name);
