@@ -19,11 +19,12 @@
 
     $path = 'image/'.$_COOKIE['imagepath'];
 
-    echo $path."<br>";
-    echo $type."<br>";
-    $image_in = new Imagick($path);
+    // echo $path."<br>";
+    // echo $type."<br>";
+    // $image_in = new Imagick($path);
 
-    echo $image_in;
+    // echo $image_in;
+    echo "<a href='$path'> <img src=$path> </a>";
 ?>
 <form id="borderform" name="borderform" method="post" action="border.php">
     <input type="submit" name="borderButton" value="Border" />
@@ -40,13 +41,13 @@
 <form id="blurform" name="blurform" method="post" action="blur.php">
     <input type="submit" name="blurButton" value="Blur" />
 </form>
-<form id="undoform" name="undoform" method="post" action="undo.php">
+<form id="undoform" name="undoform" method="post" action="editor.php">
     <input type="submit" name="undoButton" value="Undo" />
 </form>
 <form id="deleteform" name="deleteform" method="post" action="delete.php">
     <input type="submit" name="deleteButton" value="Delete" />
 </form>
-<form id="finishform" name="finishform" method="post" action="finish.php">
+<form id="finishform" name="finishform" method="post" action="finishUndo.php">
     <input type="submit" name="finishButton" value="Finish" />
 </form>
 
