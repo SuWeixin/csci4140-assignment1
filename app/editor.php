@@ -1,7 +1,7 @@
 <html>
 <body>
 <?php
-    $pieces = explode(" ", $_COOKIE['imagepath']);
+    $pieces = explode(".", $_COOKIE['imagepath']);
     $id = $pieces[0];
     $postfix = $pieces[1];
     $type = '';
