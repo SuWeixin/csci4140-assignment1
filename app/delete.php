@@ -11,19 +11,17 @@
     ));
 
     $pieces = explode(".", $_COOKIE['imagepath']);
-    $id = int($pieces[0]);
+    $id = intval($pieces[0]);
     $postfix = $pieces[1];
-
-    echo $id;
 
     $path = 'image/'.$_COOKIE['imagepath'];
 
-    // $sql = "DELETE FROM USERIMAGES WHERE id = $id";
-    // if($stmt = $pdo->query($sql)) {
-    //     unlink($path);
-    //     if(isset($_COOKIE['imagepath'])) {
-    //         setcookie('imagepath','',time()-3600);
-    //     }
-    //     header('location: homepage.php');
-    // }
+    $sql = "DELETE FROM USERIMAGES WHERE id = $id";
+    if($stmt = $pdo->query($sql)) {
+        unlink($path);
+        if(isset($_COOKIE['imagepath'])) {
+            setcookie('imagepath','',time()-3600);
+        }
+        header('location: homepage.php');
+    }
 ?>
