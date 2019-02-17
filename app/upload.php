@@ -38,7 +38,7 @@ if (isset($_POST['submit'])) {
                 // $image_id = $stmt1->fetchColumn(0) + 1;
             }
             
-            $data = addslashes(fread(fopen($image_data, "r"), filesize($image_data_size)));
+            $data = addslashes(fread(fopen($image_data, "r"), filesize($image_data)));
             $sql2 = "INSERT INTO USERIMAGES (id, username, type, image, ts, private) VALUES 
                     ({$image_id}, '{$image_username}', '{$image_data_type}', '{$data}', NOW(), '{$image_upload_mode}');";
                     
